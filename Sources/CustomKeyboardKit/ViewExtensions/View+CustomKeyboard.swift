@@ -10,7 +10,7 @@ import UIKit
 import SwiftUI
 @_spi(Advanced) import SwiftUIIntrospect
 
-public extension TextField {
+public extension View {
     func customKeyboard(view: @escaping (UITextDocumentProxy, CustomKeyboardBuilder.SubmitHandler?, CustomKeyboardBuilder.SystemFeedbackHandler?) -> some View) -> some View {
         customKeyboard(CustomKeyboardBuilder(customKeyboardView: view))
     }
@@ -22,7 +22,7 @@ public extension TextEditor {
     }
 }
 
-public extension TextField {
+public extension View {
     func customKeyboard(_ keyboardType: CustomKeyboard) -> some View {
         self
             .modifier(CustomKeyboardModifierTextField(keyboardType: keyboardType))
